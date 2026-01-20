@@ -150,10 +150,11 @@ export default function(packName, levelData) {
 	//Populate level selector
 	const levelSelect = document.querySelector('select#levelSelect');
 	levelSelect.innerHTML = '';
-	for (let i = 0; i < levelData.length; i++) {
+	const totalLevels = levelData.length;
+	for (let i = 0; i < totalLevels; i++) {
 		const option = document.createElement('option');
 		option.value = i;
-		option.text = 'Level ' + (i + 1);
+		option.text = 'Level ' + (i + 1) + ' of ' + totalLevels;
 		levelSelect.appendChild(option);
 	}
 	levelSelect.value = levelNum;
